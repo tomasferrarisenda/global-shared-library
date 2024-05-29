@@ -1,5 +1,6 @@
 
 def commitAndPush(Map config = [:]) {
+    sh "tree"
     sh "git config --global user.email ${config.email}"
     sh "git config --global user.name ${config.organization}"
     sh "git add ."
