@@ -1,6 +1,5 @@
 
 def commitAndPush(Map config = [:]) {
-    sh "ls"
     sh "git config --global user.email ${config.email}"
     sh "git config --global user.name ${config.organization}"
     sh "git add ."
@@ -9,5 +8,3 @@ def commitAndPush(Map config = [:]) {
         sh("git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${config.organization}/${config.service}.git HEAD:main")
     }
 }
-        // sh("git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${config.service}.git HEAD:origin/main")
-        // sh("git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${config.organization}/${config.service}.git")
