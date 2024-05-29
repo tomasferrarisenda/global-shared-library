@@ -6,7 +6,7 @@ def commitAndPush(Map config = [:]) {
     sh "git add ."
     sh "git commit -m 'Update image tags'"
     withCredentials([usernamePassword(credentialsId: "github", passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
-        sh("git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${config.service}.git")
+        sh("git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${config.service}.git HEAD:origin")
     }
 }
         // sh("git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${config.organization}/${config.service}.git")
