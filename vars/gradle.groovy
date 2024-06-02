@@ -16,7 +16,6 @@ def build() {
     """
 }
 
-
 def test() {
     sh """
         ./gradlew test --info
